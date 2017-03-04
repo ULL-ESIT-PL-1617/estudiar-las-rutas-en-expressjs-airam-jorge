@@ -1,7 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
-* [Routing básico](routingBasico.md)
-* [Routing](routing.md)
-* [Router API Documentation](router-api-documentation.md)
+* Routing
+    * [Routing](routing.md)
+    * [Routing básico](routingBasico.md)
 * [Usando Middleware](chapter2/UsandoMiddleware.md)
+* [Router API Documentation](router-api-documentation.md)
