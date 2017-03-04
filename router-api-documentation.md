@@ -160,5 +160,45 @@ La siguiente sección describe router.param(callback), que está obsoleto a part
 de v4.11.0.
 ```
 
+El comportamiento del método **router.param\(nombre, callback\)** se puede alterar enteramente pasando sólo una función a **router.param\(\)**. Esta función es una implementación personalizada de cómo se debe comportar **router.param\(name, callback\)** --&gt; acepta dos parámetros y debe devolver un middleware.
+
+El primer parámetro de esta función es el nombre del parámetro URL que debe capturarse, el segundo parámetro puede ser cualquier objeto _JavaScript_ que pueda ser utilizado para devolver la implementación del middleware.
+
+El middleware devuelto por la función decide el comportamiento de lo que ocurre cuando se captura un parámetro de URL.
+
+En este ejemplo, la firma **router.param \(nombre, callback\)** se modifica en **router.param\(nombre, ID de acceso\)**. En lugar de aceptar un nombre y una callback, **router.param\(\)** aceptará ahora un nombre y un número.
+
+```js
+var express = require('express');
+var app = express();
+var router = express.Router();
+
+// customizing the behavior of router.param()
+router.param(function(param, option) {
+  return function (req, res, next, val) {
+    if (val == option) {
+      next();
+    }
+    else {
+      res.sendStatus(403);
+    }
+  }
+});
+
+// using the customized router.param()
+router.param('id', 1337);
+
+// route to trigger the capture
+router.get('/user/:id', function (req, res) {
+  res.send('OK');
+});
+
+app.use(router);
+
+app.listen(3000, function () {
+  console.log('Ready');
+});
+```
+
 
 
