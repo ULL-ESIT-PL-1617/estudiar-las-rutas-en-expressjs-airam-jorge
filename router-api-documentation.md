@@ -22,7 +22,12 @@ router.get('/events', function(req, res, next) {
 });
 ```
 
+Se puede utilizar un _router_ para una URL raíz en particular, de esta manera separar sus rutas en archivos o incluso mini-aplicaciones.
 
+```js
+// only requests to /calendar/* will be sent to our "router"
+app.use('/calendar', router);
+```
 
 
 
