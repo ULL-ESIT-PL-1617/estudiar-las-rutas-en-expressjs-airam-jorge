@@ -136,3 +136,30 @@ router.get('/user/:id', function (req, res, next) {
 // mount the router on the app
 app.use('/', router);
 ```
+### Middleware de manejo de errores
+La única diferencia con este middleware, es que usa cuatro parámetros en vez de tres, y aunque no se use el objeto next, es importante mantenerlo en la cabecera de la función.
+```javascript
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+```
+Lo cual envía un mensaje de advertencia cuando se da el error 500.
+### Middleware empotrado
+
+
+### Middleware de terceros
+Existen middlewares de terceros, como por ejemplo el módulo "cookie-parser", el cual puede ser instalado usando el comando "npm":
+
+```bash
+$ npm install cookie-parser
+```
+Y para utilizarlo:
+```javascript
+var express = require('express');
+var app = express();
+var cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
+
+```
