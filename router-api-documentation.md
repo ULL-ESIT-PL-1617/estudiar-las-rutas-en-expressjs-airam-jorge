@@ -268,5 +268,9 @@ de la ruta, no cuando se agregan manejadores de métodos a la ruta. Para ello, p
 los manejadores de métodos pertenezcan a la ruta a la que fueron agregados.
 ```
 
+## router.use\(\[ruta\], \[función, ...\] función\)
+
+
+
 
 
