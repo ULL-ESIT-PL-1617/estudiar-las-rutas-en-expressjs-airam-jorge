@@ -336,5 +336,11 @@ app.use(express.static(__dirname + '/files'));
 app.use(express.static(__dirname + '/uploads'));
 ```
 
+El método router.use\(\) también admite parámetros con nombre para que los puntos de montaje de otros enrutadores se puedan beneficiar de la precarga mediante parámetros con nombre.
+
+NOTA: Aunque estas funciones de middleware se agregan a través de un enrutador en particular, cuando se ejecutan se define por la ruta a la que están conectados \(no el enrutador\). Por lo tanto, middleware agregado a través de un enrutador puede correr para otros enrutadores si sus rutas coinciden. Por ejemplo, este código muestra dos routers diferentes montados en la misma ruta:
+
+
+
 
 
