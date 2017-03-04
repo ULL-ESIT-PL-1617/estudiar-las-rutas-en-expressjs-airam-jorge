@@ -126,5 +126,26 @@ router.param('user', function(req, res, next, id) {
 });
 ```
 
+Las funciones de callback de parámetros son locales al enrutador en el que se definen. No son heredadas por aplicaciones montadas o enrutadores. Por lo tanto, las callback de parámetros definidas en el enrutador se activarán sólo por los parámetros de ruta definidos en las rutas del enrutador.
+
+Una callback de parámetro se llamará sólo una vez en un ciclo de _request-response_, incluso si el parámetro coincide en varias rutas, como se muestra en los ejemplos siguientes.
+
+```js
+router.param('id', function (req, res, next, id) {
+  console.log('CALLED ONLY ONCE');
+  next();
+});
+
+router.get('/user/:id', function (req, res, next) {
+  console.log('although this matches');
+  next();
+});
+
+router.get('/user/:id', function (req, res) {
+  console.log('and this matches too');
+  res.end();
+});
+```
+
 
 
