@@ -7,4 +7,5 @@ Los Middleware son funciones que tienen acceso a:
 La función del siguiente middleware normalmente se denomina con la variable llamada next.
 
 Los Middleware pueden realizar las siguientes tareas: 
-- 
+- Ejecutar cualquier código.
+- Realizar cambios en los objetos respuesta y petición.
