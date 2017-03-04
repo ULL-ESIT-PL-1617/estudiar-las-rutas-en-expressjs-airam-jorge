@@ -162,7 +162,7 @@ estará atento a cualquier tipo de solicitud HTTP, y buscará por los recursos q
 Existen middlewares de terceros, como por ejemplo el módulo "cookie-parser", el cual puede ser instalado usando el comando "npm":
 
 ```bash
-$ npm install cookie-parser
+$ npm install cookie-parserhttp://expressjs.com/en/guide/using-middleware.html
 ```
 Y para utilizarlo:
 ```javascript
@@ -173,3 +173,5 @@ var cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 ```
+Fuentes:
+http://expressjs.com/en/guide/using-middleware.html
