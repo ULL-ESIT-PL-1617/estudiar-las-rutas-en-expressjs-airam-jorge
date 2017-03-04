@@ -58,5 +58,18 @@ Otro ejemplo de esto es la funcionalidad "global" listada en blanco. Aquí el ej
 router.all('/api/*', requireAuthentication);
 ```
 
+## router.METHOD \(ruta, \[callback, ...\] callback\)
+
+Los métodos **router.METHOD\(\)** proporcionan la funcionalidad de enrutamiento en Express, donde METHOD es uno de los métodos HTTP, como GET, PUT, POST y así sucesivamente, en minúsculas. Por lo tanto, los métodos actuales son **router.get\(\)**, **router.post\(\)**, **router.put\(\)**, y así sucesivamente.
+
+```
+La función router.get() se llama automáticamente al método HEAD de HTTP además del método GET si
+router.head() no fue llamado para la ruta antes de router.get().
+```
+
+Puede proporcionar múltiples _callback_, y todas se tratan de la misma forma, y se comportan como middleware, excepto que estas _callback _pueden invocar a continuación _\('ruta'\)_ para omitir la\(s\) llamada\(s\) de _route_ restantes. Puede utilizar este mecanismo para realizar las condiciones previas en una ruta y, a continuación, pasar el control a las rutas subsiguientes cuando no haya ninguna razón para proceder con la ruta coincidente.
+
+El fragmento siguiente ilustra la definición de ruta más sencilla posible. Express traduce las cadenas de ruta a expresiones regulares, utilizadas internamente para coincidir con las solicitudes entrantes. Las cadenas de consulta no se consideran al realizar estas coincidencias, por ejemplo "GET /" coincidiría con la ruta siguiente, al igual que "GET /? Name = tobi".
+
 
 
