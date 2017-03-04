@@ -318,5 +318,15 @@ router.use(function(req, res){
 });
 ```
 
+Ahora supongamos que desea ignorar las solicitudes de registro de archivos estáticos, pero para continuar registrando rutas y middleware definidos después de **logger\(\)**. Simplemente mover la llamada a **express.static\(\)** a la parte superior, antes de agregar el logger middleware:
+
+```js
+router.use(express.static(__dirname + '/public'));
+router.use(logger());
+router.use(function(req, res){
+  res.send('Hello');
+});
+```
+
 
 
