@@ -270,7 +270,11 @@ los manejadores de métodos pertenezcan a la ruta a la que fueron agregados.
 
 ## router.use\(\[ruta\], \[función, ...\] función\)
 
+Utiliza la función o funciones de middleware especificadas, con la ruta de acceso de montaje opcional, cuyo valor predeterminado es _"/"_.
 
+Este método es similar a **app.use\(\)**. A continuación se describe un ejemplo simple y un caso de uso.
+
+El middleware es como un tubo de fontanería: las solicitudes comienzan en la primera función de middleware definida y funcionan de manera "descendente" en el procesamiento de la pila de middleware para cada ruta que coincidan.
 
 
 
