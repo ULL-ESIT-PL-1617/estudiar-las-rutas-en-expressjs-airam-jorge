@@ -200,5 +200,24 @@ app.listen(3000, function () {
 });
 ```
 
+En este ejemplo, la firma **router.param\(nombre, callback\)** permanece igual, pero en lugar de una callback de middleware, se ha definido una función de comprobación de tipo de dato personalizada para validar el tipo de dato del ID de usuario.
+
+```js
+router.param(function(param, validator) {
+  return function (req, res, next, val) {
+    if (validator(val)) {
+      next();
+    }
+    else {
+      res.sendStatus(403);
+    }
+  }
+});
+
+router.param('id', function (candidate) {
+  return !isNaN(parseFloat(candidate)) && isFinite(candidate);
+});
+```
+
 
 
