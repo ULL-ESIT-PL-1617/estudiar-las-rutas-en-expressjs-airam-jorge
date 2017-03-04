@@ -1,12 +1,6 @@
 # Routing básico
 
-El Routing define como una aplicación responde a una petición que pretende acceder a un punto concreto, esto es una URI (Identificador de Recursos Uniformes) y un método específico HTTP. Siendo algunos ejemplos de métodos los siguientes.
-- GET
-- POST
-- PUT
-- DELETE
-
-Cada ruta puede tener varias funciones responsables (handler) que son ejecutadas cuando la ruta coincide. La definición de la ruta sigue la siguiente estructura.
+El Routing define como una aplicación responde a una petición que pretende acceder a un punto concreto, esto es una URI (Identificador de Recursos Uniformes) y un método específico HTTP. Cada ruta puede tener varias funciones responsables (handler) que son ejecutadas cuando la ruta coincide. La definición de la ruta sigue la siguiente estructura.
 
 ```javascript
 app.Method(PATH, HANDLER)
@@ -35,3 +29,5 @@ app.listen(port, function () {
 ```
 
 En la carpeta de ejemplos se encuentra el ejemplo `inicial.js`. Este crea un servidor simple usando express y varias rutas con sus handlers. 
+
+
