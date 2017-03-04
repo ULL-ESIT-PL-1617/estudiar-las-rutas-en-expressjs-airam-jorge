@@ -49,4 +49,26 @@ Con respecto a las expresiones regulares, se sigue el mismo patrón estándar.
 
 Se puede ver un ejemplo de *paths* en `paths.js`.
 
-### Parámetros de la routa
+### Parámetros de la ruta
+
+Los parámetros de la ruta son segmentos de la URL que son capturados. Los valores capturados son después almacenados en el objeto `req.params`, con el nombre del parámetro especificado en el *path* como su clave. Se puede ver ilustrado de la siguiente forma.
+
+| Elemento | Contenido |
+|---|---|
+|Route path|/users/:userId/books/:bookId|
+|Request URL| http://localhost:3000/users/34/books/8989|
+| req.params | { "userId": "34", "bookId": "8989" } |
+
+Los elementos '.' y '-' pueden ser utilizados con propósitos específicos.
+
+| Elemento | Contenido |
+|---|---|
+|Route path|/flights/:from-:to|
+|Request URL| http://localhost:3000/flights/LAX-SFO|
+| req.params | { "from": "LAX", "to": "SFO" } |
+
+Se puede ver un ejemplo del uso de los parámetros en `param.js`.
+<br>
+<br>
+<br>
+<br>
