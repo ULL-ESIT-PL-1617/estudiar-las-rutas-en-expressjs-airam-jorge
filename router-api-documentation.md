@@ -58,7 +58,7 @@ Otro ejemplo de esto es la funcionalidad "global" listada en blanco. Aquí el ej
 router.all('/api/*', requireAuthentication);
 ```
 
-## router.METHOD \(ruta, \[callback, ...\] callback\)
+## router.METHOD\(ruta, \[callback, ...\] callback\)
 
 Los métodos **router.METHOD\(\)** proporcionan la funcionalidad de enrutamiento en Express, donde METHOD es uno de los métodos HTTP, como GET, PUT, POST y así sucesivamente, en minúsculas. Por lo tanto, los métodos actuales son **router.get\(\)**, **router.post\(\)**, **router.put\(\)**, y así sucesivamente.
 
@@ -84,6 +84,45 @@ router.get(/^\/commits\/(\w+)(?:\.\.(\w+))?$/, function(req, res){
   var from = req.params[0];
   var to = req.params[1] || 'HEAD';
   res.send('commit range ' + from + '..' + to);
+});
+```
+
+## router.param\(nombre, callback\)
+
+Agrega los disparadores de callback a los parámetros de ruta, donde _nombre_ es el nombre del parámetro y la _callback_ es la función de callback. Aunque el nombre es técnicamente opcional, el uso de este método sin que sea obsoleto a partir de Express v4.11.0 \(consulte a continuación\).
+
+Los parámetros de la función de callback son:
+
+* req, el objeto request.
+
+* res, el objeto de response.
+
+* next, indicando la siguiente función de middleware.
+
+* El valor del parámetro _name_.
+
+* El nombre del parámetro.
+
+```
+A diferencia de app.param(), router.param() no acepta una matriz de parámetros de ruta.
+```
+
+Por ejemplo, cuando: el usuario está presente en una ruta, puede mapear la lógica de carga del usuario para proporcionar automáticamente `req.user` a la ruta o realizar validaciones en la entrada de parámetros.
+
+```js
+router.param('user', function(req, res, next, id) {
+
+  // try to get the user details from the User model and attach it to the request object
+  User.find(id, function(err, user) {
+    if (err) {
+      next(err);
+    } else if (user) {
+      req.user = user;
+      next();
+    } else {
+      next(new Error('failed to load user'));
+    }
+  });
 });
 ```
 
