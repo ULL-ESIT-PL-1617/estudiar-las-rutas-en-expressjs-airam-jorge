@@ -328,5 +328,13 @@ router.use(function(req, res){
 });
 ```
 
+Otro ejemplo es servir archivos de varios directorios, dando prioridad a _"./public"_ sobre los demás:
+
+```js
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/files'));
+app.use(express.static(__dirname + '/uploads'));
+```
+
 
 
