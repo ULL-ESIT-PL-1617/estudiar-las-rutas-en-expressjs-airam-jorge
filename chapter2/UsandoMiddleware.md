@@ -22,3 +22,4 @@ Una aplicación Express puede usar los siguientes tipos de middleware:
 - Middleware de terceros.
 
 ### Middleware a nivel de aplicación
+Estos middleware se enlazan a una instancia del objeto de aplicación mediante las funciones `app.use()` y `app.metodo()` donde `metodo()` es un método HTTP (GET, POST, DELETE..), pero en minúscula
