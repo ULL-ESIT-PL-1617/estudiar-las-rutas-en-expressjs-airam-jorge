@@ -35,5 +35,28 @@ app.use('/calendar', router);
 
 ---
 
+### router.all\(path, \[callback, ...\] callback\) {#router.all}
+
+Este método es igual que los métodos **router.METHOD\(\)**, excepto que coincide con todos los métodos HTTP \(verbos\).
+
+Este método es extremadamente útil para mapear la lógica "global" para prefijos de ruta específicos o coincidencias arbitrarias. Por ejemplo, si coloco la ruta siguiente en la parte superior de todas las demás definiciones de ruta, se requeriría que todas las rutas a partir de ese punto requieran autentificación y cargarían automáticamente un usuario. Tenga en cuenta que estas devoluciones de llamada no tienen que actuar como puntos finales; **LoadUser** puede realizar una tarea y luego llamar a _next\(\)_ para seguir comparando las rutas subsiguientes.
+
+```js
+router.all('*', requireAuthentication, loadUser);
+```
+
+O el equivalente:
+
+```js
+router.all('*', requireAuthentication)
+router.all('*', loadUser);
+```
+
+Otro ejemplo de esto es la funcionalidad "global" listada en blanco. Aquí el ejemplo es como antes, pero sólo restringe los caminos prefijados con _"/api"_:
+
+```js
+router.all('/api/*', requireAuthentication);
+```
+
 
 
