@@ -48,3 +48,5 @@ Con respecto a las expresiones regulares, se sigue el mismo patrón estándar.
 | _/.*fly$/_ | /butterfly, /dragonfly, /fly, /testfly, ... (_**Not** /dragonflytest_) |
 
 Se puede ver un ejemplo de *paths* en `paths.js`.
+
+### Parámetros de la routa
