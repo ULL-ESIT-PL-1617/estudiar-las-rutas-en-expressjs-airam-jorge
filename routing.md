@@ -81,8 +81,17 @@ Para no dejar la *request* del cliente sin respuesta, es necesario llamar a uno 
 
 | Método | Descripción |
 |---|---|
-|[res.download()](http://expressjs.com/en/4x/api.html#res.download)| Señala un archivo para ser descargado |
-| 
+|[res.download()](http://expressjs.com/en/4x/api.html#res.download)| Señala un archivo para ser descargado. |
+|[res.end()](http://expressjs.com/en/4x/api.html#res.end)  | Termina el proceso de respuesta. |
+|[res.json()](http://expressjs.com/en/4x/api.html#res.json)  | Envía una respuesta JSON. |
+|[res.jsonp()](http://expressjs.com/en/4x/api.html#res.jsonp)  | Envía una respuesta JSON con soporte para JSONP |
+|[res.redirect()](http://expressjs.com/en/4x/api.html#res.redirect)  | Redirige la *request* |
+|[res.render()](http://expressjs.com/en/4x/api.html#res.render)  | Renderiza una vista. |
+|[res.send()](http://expressjs.com/en/4x/api.html#res.send)  | Envia una respuesta de varios tipos. |
+|[res.sendFile()](http://expressjs.com/en/4x/api.html#res.sendFile)  | En un archivo como un stream de datos. |
+|[res.sendStatus()](http://expressjs.com/en/4x/api.html#res.sendStatus)  | Envía un código de respuesta y la representación en una cadena en el cuerpo. |
+
+Se puede ver un ejemplo de algunos métodos de respuesta en `responses.js`.
 
 <br>
 <br>
