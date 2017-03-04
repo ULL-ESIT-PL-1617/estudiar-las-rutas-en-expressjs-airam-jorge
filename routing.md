@@ -47,4 +47,4 @@ Con respecto a las expresiones regulares, se sigue el mismo patrón estándar.
 | */e/* | /test.txt, /e, /eee/, /name, /user, ... |
 | _/.*fly$/_ | /butterfly, /dragonfly, /fly, /testfly, ... (_**Not** /dragonflytest_) |
 
-
+Se puede ver un ejemplo de *paths* en `paths.js`.
