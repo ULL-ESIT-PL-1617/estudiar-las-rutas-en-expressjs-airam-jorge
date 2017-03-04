@@ -6,10 +6,27 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-airam-jorge",
+    "gitbookUrl": "https://git.gitbook.com/ediolot/routas-expressjs.git"
+  },
+  "keywords": [
+    "gitbook",
+    "express",
+    "routes"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.5.6",
-    "express": "^4.15.0"
+    "express": "^4.15.0",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2",
+    "gulp-shell": "^0.6.1",
+    "shell-task": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp-shell": "^0.6.1"
   }
 }
