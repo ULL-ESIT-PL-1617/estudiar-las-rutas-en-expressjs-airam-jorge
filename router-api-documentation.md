@@ -260,5 +260,13 @@ router.route('/users/:user_id')
 });
 ```
 
+Este enfoque reutiliza la ruta single _/users/:user_\__id_ y agrega controladores para varios métodos HTTP.
+
+```
+NOTA: Cuando se utiliza router.route(), el ordenamiento del middleware se basa en la fecha de creación
+de la ruta, no cuando se agregan manejadores de métodos a la ruta. Para ello, puede considerar que
+los manejadores de métodos pertenezcan a la ruta a la que fueron agregados.
+```
+
 
 
