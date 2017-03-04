@@ -276,5 +276,33 @@ Este método es similar a **app.use\(\)**. A continuación se describe un ejempl
 
 El middleware es como un tubo de fontanería: las solicitudes comienzan en la primera función de middleware definida y funcionan de manera "descendente" en el procesamiento de la pila de middleware para cada ruta que coincidan.
 
+```js
+var express = require('express');
+var app = express();
+var router = express.Router();
+
+// simple logger for this router's requests
+// all requests to this router will first hit this middleware
+router.use(function(req, res, next) {
+  console.log('%s %s %s', req.method, req.url, req.path);
+  next();
+});
+
+// this will only be invoked if the path starts with /bar from the mount point
+router.use('/bar', function(req, res, next) {
+  // ... maybe some additional /bar logging ...
+  next();
+});
+
+// always invoked
+router.use(function(req, res, next) {
+  res.send('Hello World');
+});
+
+app.use('/foo', router);
+
+app.listen(3000);
+```
+
 
 
