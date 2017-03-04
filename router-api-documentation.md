@@ -340,7 +340,25 @@ El método router.use\(\) también admite parámetros con nombre para que los pu
 
 NOTA: Aunque estas funciones de middleware se agregan a través de un enrutador en particular, cuando se ejecutan se define por la ruta a la que están conectados \(no el enrutador\). Por lo tanto, middleware agregado a través de un enrutador puede correr para otros enrutadores si sus rutas coinciden. Por ejemplo, este código muestra dos routers diferentes montados en la misma ruta:
 
+```js
+var authRouter = express.Router();
+var openRouter = express.Router();
 
+authRouter.use(require('./authenticate').basic(usersdb));
 
+authRouter.get('/:user_id/edit', function(req, res, next) { 
+  // ... Edit user UI ...  
+});
+openRouter.get('/', function(req, res, next) { 
+  // ... List users ... 
+})
+openRouter.get('/:user_id', function(req, res, next) { 
+  // ... View user ... 
+})
 
+app.use('/users', authRouter);
+app.use('/users', openRouter);
+```
+
+A pesar de que el middleware de autentificación se ha añadido a través de _authRouter_ se ejecutará en las rutas definidas por el _openRouter_, así como ambos routers fueron montados en _/users_. Para evitar este comportamiento, utilice rutas diferentes para cada enrutador.
 
