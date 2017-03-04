@@ -68,6 +68,22 @@ Los elementos '.' y '-' pueden ser utilizados con propósitos específicos.
 | req.params | { "from": "LAX", "to": "SFO" } |
 
 Se puede ver un ejemplo del uso de los parámetros en `param.js`.
+
+###  Handlers de la ruta
+
+Es posible proveer múltiples *callbacks* que se comportan como *middleware* para manejar una *request*. Estos *callbacks* deberán invocar a la función `next()` para sobrepasar los callbacks de la ruta restantes.
+
+Los *handlers* pueden ir en forma de función, array de funciones o una combinación de ambos. Es posible ver un ejemplo en `handlers.js`.
+
+### Métodos de respuesta
+
+Para no dejar la *request* del cliente sin respuesta, es necesario llamar a uno de los siguientes métodos que terminará el ciclo de  *request*-*response* enviando una respuesta al cliente.
+
+| Método | Descripción |
+|---|---|
+|[res.download()](http://expressjs.com/en/4x/api.html#res.download)| Señala un archivo para ser descargado |
+| 
+
 <br>
 <br>
 <br>
