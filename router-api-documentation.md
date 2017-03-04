@@ -8,5 +8,21 @@ El objeto expreso de nivel superior tiene un método _Router\(\)_ que crea un nu
 
 Una vez que haya creado un objeto _route_, puede agregar rutas intermedias y de método HTTP \(como obtener, publicar, publicar, etc.\) como una aplicación. Por ejemplo:
 
+```js
+// invoked for any requests passed to this router
+router.use(function(req, res, next) {
+  // .. some logic here .. like any other middleware
+  next();
+});
+
+// will handle any request that ends in /events
+// depends on where the router is "use()'d"
+router.get('/events', function(req, res, next) {
+  // ..
+});
+```
+
+
+
 
 
