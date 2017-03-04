@@ -7,3 +7,5 @@ Como ya hemos visto en el ejemplo `inicial.js`, Routing es la definición de las
 Aunque existen numerosos métodos *request* de HTTP, no el conjunto completo es soportado por express.
 
 **Métodos HTTP soportados**: *get, post, put, head, delete, options, trace, copy, lock, mkcol, move, purge, propfind, proppatch, unlock, report, mkactivity, checkout, merge, m-search, notify, subscribe, unsubscribe, patch, search, connect*.
+
+Sin embargo, existe además un método de express para el cual no existe equivalente en HTTP, el método `all(PATH, HANDLER)`, que será aplicado para **todos los métodos** del módulo HTTP. Se puede ver un ejemplo en `metodoAll.js`.
