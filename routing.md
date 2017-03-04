@@ -13,7 +13,7 @@ Sin embargo, existe además un método de express para el cual no existe equival
 ```javascript
 app.all('/', function (req, res, next) {
     console.log('Method all used ...');
-    next();
+    next(); /* Transfiere el control al siguiente handler */
 });
 ```
 
