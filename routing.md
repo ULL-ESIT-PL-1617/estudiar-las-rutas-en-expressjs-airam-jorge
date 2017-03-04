@@ -93,7 +93,23 @@ Para no dejar la *request* del cliente sin respuesta, es necesario llamar a uno 
 
 Se puede ver un ejemplo de algunos métodos de respuesta en `responses.js`.
 
-<br>
-<br>
-<br>
-<br>
+### Método route
+
+Es posible crear rutas encadenadas usando el método `route()`. De la siguiente forma.
+
+```javascript
+app.route('/book')
+  .get(function (req, res) {
+    res.send('Get a random book');
+  });
+  .post(function (req, res) {
+    res.send('Add a book');
+  });
+  .put(function (req, res) {
+    res.send('Update the book');
+  });
+```
+
+### Modularización
+
+Es posible utilizar la clase `express.Router`para crear handlers de forma modular. Una instancia `Router` es un middleware y sistema de enrutado completo. Se puede ver un ejemplo de modularización en `module.js` y `birds.js`. 
