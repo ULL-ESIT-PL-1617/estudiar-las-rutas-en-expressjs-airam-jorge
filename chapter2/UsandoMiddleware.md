@@ -25,9 +25,10 @@ Una aplicación Express puede usar los siguientes tipos de middleware:
 Estos middleware se enlazan a una instancia del objeto de aplicación mediante las funciones `app.use()` y `app.metodo()` donde `metodo()` es un método HTTP (GET, POST, DELETE..), pero en minúscula.
 En este ejemplo podemos observar una función middleware utilizando lo anteriormente mencionado:
 ```javascript
-var app = express()
+var app = express();
 
 app.use(function (req, res, next) {
-    console.log('Hora: 
-}
+  console.log('Hora:', Date.now());
+  next();
+});
 ```
