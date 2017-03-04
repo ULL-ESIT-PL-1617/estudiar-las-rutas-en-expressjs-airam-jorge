@@ -146,7 +146,17 @@ app.use(function(err, req, res, next) {
 ```
 Lo cual envía un mensaje de advertencia cuando se da el error 500.
 ### Middleware empotrado
+Este middleware es reponsable del servicio de activos estáticos para una explicación Express, por tanto, puede ser el encargado de suministrar ficheros .css, .js, imágenes, etc. La sintaxis es como sigue:
+```javascript
+express.static(ruta, [opciones])
+```
+donde "ruta" es el directorio raíz desde el que se realiza el servicio de archivos estáticos, y "opciones" un objeto de opciones como su nombre indica, y que puede ser opcional.
 
+De esta forma, el código:
+```javascript
+app.use(express.static('public'));
+```
+estará atento a cualquier tipo de solicitud HTTP, y buscará por los recursos que le pidan (.css, .js, imágenes, etc.) en la carpeta "public".
 
 ### Middleware de terceros
 Existen middlewares de terceros, como por ejemplo el módulo "cookie-parser", el cual puede ser instalado usando el comando "npm":
