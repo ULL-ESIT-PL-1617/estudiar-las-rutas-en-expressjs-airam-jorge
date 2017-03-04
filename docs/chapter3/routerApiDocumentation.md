@@ -6,7 +6,7 @@ Un objeto _router_ es una instancia aislada de middleware y rutas. También se p
 
 Un _router_ se comporta como el propio middleware, por lo que puede utilizarlo como argumento para _app.use \(\)_ o como argumento para el método _use\(\)_ de otro _router_.
 
-El objeto expreso de nivel superior tiene un método _Router\(\)_ que crea un nuevo objeto de _router_.
+El objeto express de nivel superior tiene un método _Router\(\)_ que crea un nuevo objeto de _router_.
 
 Una vez que haya creado un objeto _route_, puede agregar rutas intermedias y de método HTTP \(como obtener, publicar, publicar, etc.\) como una aplicación. Por ejemplo:
 
