@@ -147,5 +147,18 @@ router.get('/user/:id', function (req, res) {
 });
 ```
 
+En _GET /user/42_, se imprime lo siguiente:
+
+```bash
+CALLED ONLY ONCE
+although this matches
+and this matches too
+```
+
+```
+La siguiente sección describe router.param(callback), que está obsoleto a partir
+de v4.11.0.
+```
+
 
 
