@@ -59,4 +59,18 @@ app.use('/user/:id', function(req, res, next) {
      next();
 });
 ```
+En el siguiente ejemplo, aun teniendo dos middlewares para el mismo punto de montaje, solo se ejecutará la primera parte, ya que se termina el ciclo de solicitud-respuesta.
+```javascript
+app.get('/user/:id', function (req, res, next) {
+  // si el ID es 0, pasamos a la siguiente middleware. 
+  if (req.params.id == 0) next('route');
+  // en otro caso, pasar el control a la siguiente middleware en la pila.
+  else next(); //
+}, function (req, res, next) {
+     res.render('regular');
+});
 
+app.get('/user/:id', function (req, res, next) {
+  res.render('special');
+});
+```
