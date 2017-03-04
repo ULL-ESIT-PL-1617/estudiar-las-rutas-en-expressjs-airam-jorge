@@ -74,3 +74,18 @@ app.get('/user/:id', function (req, res, next) {
   res.render('special');
 });
 ```
+Mediante "next('route')" se invoca a la siguiente middleware que tenga un punto de montaje, si nos queremos saltar alguna middleware de la pila de ejecución.
+```javascript
+app.get('/user/:id', function (req, res, next) {
+  // si el ID es 0, pasamos a la siguiente middleware. 
+  if (req.params.id == 0) next('route');
+  // en otro caso, pasar el control a la siguiente middleware en la pila.
+  else next(); //
+}, function (req, res, next) {
+     res.render('regular');
+});
+
+app.get('/user/:id', function (req, res, next) {
+  res.render('special');
+});
+```
