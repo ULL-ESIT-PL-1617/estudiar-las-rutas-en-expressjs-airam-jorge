@@ -10,8 +10,11 @@ Aunque existen numerosos métodos *request* de HTTP, no el conjunto completo es 
 
 Sin embargo, existe además un método de express para el cual no existe equivalente en HTTP, que será aplicado para **todos los métodos** del módulo HTTP. Se puede ver un ejemplo en `metodoAll.js` que imprimirá por consola cada vez que accedamos a "`/`". La implementación del método es la siguiente.
 
+```javascript
 app.all('/', function (req, res, next) {
     console.log('Method all used ...');
     next();
 });
+```
+
 
