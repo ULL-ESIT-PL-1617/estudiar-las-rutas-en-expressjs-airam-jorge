@@ -67,9 +67,25 @@ La función router.get() se llama automáticamente al método HEAD de HTTP adem�
 router.head() no fue llamado para la ruta antes de router.get().
 ```
 
-Puede proporcionar múltiples _callback_, y todas se tratan de la misma forma, y se comportan como middleware, excepto que estas _callback _pueden invocar a continuación _\('ruta'\)_ para omitir la\(s\) llamada\(s\) de _route_ restantes. Puede utilizar este mecanismo para realizar las condiciones previas en una ruta y, a continuación, pasar el control a las rutas subsiguientes cuando no haya ninguna razón para proceder con la ruta coincidente.
+Puede proporcionar múltiples _callback_, y todas se tratan de la misma forma, y se comportan como middleware, excepto que estas _callback \_pueden invocar a continuación _\('ruta'\)_ para omitir la\(s\) llamada\(s\) de \_route_ restantes. Puede utilizar este mecanismo para realizar las condiciones previas en una ruta y, a continuación, pasar el control a las rutas subsiguientes cuando no haya ninguna razón para proceder con la ruta coincidente.
 
-El fragmento siguiente ilustra la definición de ruta más sencilla posible. Express traduce las cadenas de ruta a expresiones regulares, utilizadas internamente para coincidir con las solicitudes entrantes. Las cadenas de consulta no se consideran al realizar estas coincidencias, por ejemplo "GET /" coincidiría con la ruta siguiente, al igual que "GET /? Name = tobi".
+El fragmento siguiente ilustra la definición de ruta más sencilla posible. Express traduce las cadenas de ruta a expresiones regulares, utilizadas internamente para coincidir con las solicitudes entrantes. Las cadenas de consulta no se consideran al realizar estas coincidencias, por ejemplo _"GET /"_ coincidiría con la ruta siguiente, al igual que _"GET/?Name=tobi"_.
+
+```js
+router.get('/', function(req, res){
+  res.send('hello world');
+});
+```
+
+También se puede usar expresiones regulares, útil si tiene restricciones muy específicas, por ejemplo, la siguiente coincidiría con _"GET /commits/71dbb9c"_ así como _"GET /commits/71dbb9c..4c084f9"_.
+
+```js
+router.get(/^\/commits\/(\w+)(?:\.\.(\w+))?$/, function(req, res){
+  var from = req.params[0];
+  var to = req.params[1] || 'HEAD';
+  res.send('commit range ' + from + '..' + to);
+});
+```
 
 
 
