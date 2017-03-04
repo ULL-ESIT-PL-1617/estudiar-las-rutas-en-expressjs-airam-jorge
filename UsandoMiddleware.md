@@ -16,3 +16,9 @@ Si la función middleware actual no es el final del ciclo petición-respuesta, e
 
 Una aplicación Express puede usar los siguientes tipos de middleware:
 - Middleware a nivel de **aplicación**.
+- Middleware a nivel de **router**.
+- Middleware para el **manejo de errores**.
+- Middleware **empotrado**.
+- Middleware de terceros.
+
+### Middleware a nivel de aplicación
