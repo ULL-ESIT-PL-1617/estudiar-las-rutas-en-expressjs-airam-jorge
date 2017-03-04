@@ -304,5 +304,19 @@ app.use('/foo', router);
 app.listen(3000);
 ```
 
+La ruta de "montaje" se quita y no es visible para la función de middleware. El efecto principal de esta característica es que una función de middleware montada puede operar sin cambios de código independientemente de su ruta de acceso "prefix".
+
+El orden en el que se define middleware con **router.use\(\)** es muy importante. Se invocan secuencialmente, por lo que el orden define la precedencia de middleware. Por ejemplo, por lo general, un registrador es el primer middleware que utilizaría, de modo que cada solicitud se registra.
+
+```js
+var logger = require('morgan');
+
+router.use(logger());
+router.use(express.static(__dirname + '/public'));
+router.use(function(req, res){
+  res.send('Hello');
+});
+```
+
 
 
