@@ -17,4 +17,34 @@ app.all('/', function (req, res, next) {
 });
 ```
 
+### Routes paths
+
+El path dentro del método *request* define el punto en el que la *request* es realizada, estos pueden ser cadenas, patrones o expresiones regulares. Dentro de los patrones de cadenas podemos distinguir los siguientes elementos.
+
+| Elemento  |  Descripción |  
+|---|---|
+| ?  | Hace un match con el elemento previo cero o una veces.  |
+|  + | Hace un match con el elemento previo una o más veces. |
+ | *  | Hace un match con cualquier cadena.  | 
+|  ( ) | Permite agrupar contenido.  |  
+| [( )] | Construcción que permite escapar un elemento. |
+_ __Nota:__ Es importante escapar el carácter '$' de la forma [($)]._
+
+Algunos ejemplos de rutas utilizando cadenas de patrones:
+
+| Cadena | Match con|
+|---|---|
+| */test.txt* | /test.txt |
+| */ab?cd* | /abcd, /acd |
+| */ab(cd)?* | /abcd, /ab |
+| */ab+cd* | /abcd, /abbcd, /abbbcd, ... |
+| _/ab*ab_ | /abcd, /abRANDOMcd, /ab123412312cd, ... |
+
+Con respecto a las expresiones regulares, se sigue el mismo patrón estándar.
+
+| Expresión | Match con|
+|---|---|
+| */e/* | /test.txt, /e, /eee/, /name, /user, ... |
+| _/.*fly$/_ | /butterfly, /dragonfly, /fly, /testfly, ... (_**Not** /dragonflytest_) |
+
 
