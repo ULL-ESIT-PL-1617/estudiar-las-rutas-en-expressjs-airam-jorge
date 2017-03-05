@@ -7,16 +7,22 @@ var gBookURL = config.repository.gitbookUrl;
 var docs = path.join(__dirname, '../docs');
 
 if (!fs.existsSync(docs)) {
+    console.log("Creating docs");
     fs.mkdirSync(docs);
 }
+
+console.log("Accesing docs");
 process.chdir(docs);
 
 if (!fs.existsSync(path.join(docs, '/.git'))) {
+    console.log("Git init");
     exec('git init', {stdio:[0,1,2]});
 }
 
+console.log("try git remote add gbook")
 try {
     exec('git remote add gbook ' + gBookURL, {stdio:[0,1,2]});
 } catch (e) {}
 
+console.log("git pull gbook master")
 exec('git pull gbook master', {stdio:[0,1,2]});
