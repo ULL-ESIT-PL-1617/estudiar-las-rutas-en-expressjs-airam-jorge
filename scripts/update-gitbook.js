@@ -6,11 +6,29 @@ var config = require('../package.json');
 var gBookURL = config.repository.gitbookUrl;
 var docs = path.join(__dirname, '../docs');
 
-if (!fs.existsSync(docs)) {
-    console.log("Creating docs");
-    fs.mkdirSync(docs);
+var rmDir = function (dirPath) {
+    try { var files = fs.readdirSync(dirPath); }
+    catch (e) { return; }
+    if (files.length > 0) {
+        for (var i = 0; i < files.length; ++i) {
+            var filePath = dirPath + '/' + files[i];
+            if (fs.statSync(filePath).isFile()) {
+                fs.unlinkSync(filePath);
+            } else {
+                rmDir(filePath);
+            }
+        }
+    }
+    fs.rmdirSync(dirPath);
 }
 
+if (fs.existsSync(docs)) {
+    console.log("Removing old docs");
+    rmDir(docs);
+}
+
+console.log("Creating docs");
+fs.mkdirSync(docs);
 console.log("Accesing docs");
 process.chdir(docs);
 
