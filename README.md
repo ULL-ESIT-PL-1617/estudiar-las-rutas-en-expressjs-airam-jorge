@@ -35,7 +35,7 @@
   <td> Airam Manuel Navas Simón </td>
   <td> <a href="https://github.com/AiramNavas">GitHub</a> </td>
   <td> <a href="https://airamnavas.github.io/">Página personal</a> </td>
-  <td> <a href="#">Página personal</a> </td>
+  <td> <a href="#">Heroku</a> </td>
  </tr>
  <tr>
  <td> Kevin Días Marrero </td>
@@ -47,6 +47,6 @@
  <td> Jorge Sierra Acosta  </td>
  <td> <a href="https://github.com/Ediolot">GitHub</a>  </td>
  <td> <a href="https://ediolot.github.io/">Página personal</a> </td>
- <td> <a href="#">Página personal</a> </td>
+ <td> <a href="#">Heroku</a> </td>
  </tr>
 </table>
