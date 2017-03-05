@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '/gh-pages')));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '/gh-pages'));
+  res.render('index');
 })
 
 var server = app.listen(app.set('port'), function() {
