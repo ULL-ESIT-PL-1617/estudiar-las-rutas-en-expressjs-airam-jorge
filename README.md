@@ -1,6 +1,6 @@
 # **Rutas en ExpressJS.**
 
-> *Elaboracion de un libro sobre las rutas en expressJS*
+> *Elaboracion y estudio de un libro sobre las rutas en expressJS*
 
 ### Repositorio de la organización:  
 
