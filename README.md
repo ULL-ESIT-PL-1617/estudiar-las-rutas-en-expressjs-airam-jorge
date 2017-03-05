@@ -2,7 +2,7 @@
 
 > *Elaboracion de un libro sobre las rutas en expressJS*
 
-#### Repositorio de la organización:  
+### Repositorio de la organización:  
 
 - [github](https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-airam-jorge)
 - [gh-pages](https://ull-esit-pl-1617.github.io/estudiar-las-rutas-en-expressjs-airam-jorge)
@@ -10,7 +10,7 @@
 - [Descripción de la práctica](https://casianorodriguezleon.gitbooks.io/ull-esit-1617/practicas/practicalearningrouting.html)
 
 
-##### Enlaces a las máquinas del iaas
+#### Enlaces a las máquinas del iaas
 
  <table>
   <tr>
@@ -28,7 +28,7 @@
  </table>
 
 
-##### Autores
+#### Autores
 
 <table>
  <tr>
