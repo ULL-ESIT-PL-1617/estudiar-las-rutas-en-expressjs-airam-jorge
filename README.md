@@ -15,15 +15,15 @@
  <table>
   <tr>
    <td> Airam Manuel Navas Simón </td>
-   <td> <a href="#">Máquina Iaas</a> </td>
+   <td> <a href="http://10.6.128.148:8081/">Máquina Iaas</a> </td>
   </tr>
   <tr>
   <td> Kevin Días Marrero </td>
-  <td> <a href="#">Máquina Iaas</a> </td>
+  <td> <a href="http://10.6.128.44:8081/">Máquina Iaas</a> </td>
   </tr>
   <tr>
   <td> Jorge Sierra Acosta  </td>
-  <td> <a href="#">Máquina Iaas</a>  </td>
+  <td> <a href="http://10.6.128.185:8081/">Máquina Iaas</a>  </td>
   </tr>
  </table>
 
