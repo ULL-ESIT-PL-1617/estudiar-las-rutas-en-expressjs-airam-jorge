@@ -41,5 +41,5 @@ router.use('/bar', function(req, res, next) {
 
 app.use('/', router);
 app.listen(port, function () {
-    console.log('Example listening on port 3000!');
+    console.log('Ninth example listening on port ' + port);
 });
