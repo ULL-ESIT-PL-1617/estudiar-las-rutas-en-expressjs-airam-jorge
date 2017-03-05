@@ -5,10 +5,10 @@ var config = require('../package.json');
 
 var gBookURL = config.repository.gitbookUrl;
 var docs = path.join(__dirname, '../docs');
-var ghPagesDir = path.join(__dirname, '/..gh-pages');
+var ghPagesDir = path.join(__dirname, '../gh-pages');
 
 if (!fs.existsSync(ghPagesDir)) {
-    console.log("creating gh-pages dir")
+    console.log("Creating gh-pages dir");
     fs.mkdirSync(ghPagesDir);
 }
 

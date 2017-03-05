@@ -19,10 +19,10 @@ if (!fs.existsSync(path.join(docs, '/.git'))) {
     exec('git init', {stdio:[0,1,2]});
 }
 
-console.log("try git remote add gbook")
+console.log("Trying to add remote");
 try {
     exec('git remote add gbook ' + gBookURL, {stdio:[0,1,2]});
 } catch (e) {}
 
-console.log("git pull gbook master")
+console.log("Trying to pull from remote");
 exec('git pull gbook master', {stdio:[0,1,2]});

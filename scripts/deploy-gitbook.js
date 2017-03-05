@@ -4,6 +4,7 @@ var config = require('../package.json');
 
 var repoUrl = config.repository.url;
 
+console.log("Deploying Gitbook on gh-pages branch");
 ghPages.publish(path.join(__dirname, '/../gh-pages'), {
     repo: repoUrl,
     message: 'Auto generated commit for gh-pages.',
