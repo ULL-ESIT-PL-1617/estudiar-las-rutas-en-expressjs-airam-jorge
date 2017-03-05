@@ -8,7 +8,10 @@
     "generate-gitbook": "node ./scripts/generate-gitbook.js",
     "deploy-gitbook": "node ./scripts/deploy-gitbook.js",
     "build": "npm run update-gitbook && npm run generate-gitbook",
-    "deploy": "npm run build && npm run deploy-gitbook"
+    "deploy": "npm run build && npm run deploy-gitbook",
+    "deploy-heroku": "node ./scripts/deploy-heroku.js",
+    "serve-temporal": "node index.js",
+    "serve": "nohup sudo -b index.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +23,11 @@
     "express",
     "routes"
   ],
+  "appPort": 8081,
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cli-interact": "^0.1.9",
     "ejs": "^2.5.6",
     "express": "^4.15.0",
     "gh-pages": "^0.12.0",
