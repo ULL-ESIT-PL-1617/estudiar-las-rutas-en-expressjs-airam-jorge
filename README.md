@@ -6,7 +6,6 @@
 
 - [github](https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-airam-jorge)
 - [gh-pages](https://ull-esit-pl-1617.github.io/estudiar-las-rutas-en-expressjs-airam-jorge)
-- [Heroku]()
 - [gitbook.com](https://ediolot.gitbooks.io/routas-expressjs/content/)
 - [Descripción de la práctica](https://casianorodriguezleon.gitbooks.io/ull-esit-1617/practicas/practicalearningrouting.html)
 
