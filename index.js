@@ -6,8 +6,8 @@ var config = require('./package.json');
 app.set('port', (process.env.PORT || config.appPort || 80));
 
 // view engine setup
-// app.set('views', path.join(__dirname, '/gh-pages'));
-// app.set('view engine', 'html');
+app.set('views', path.join(__dirname, '/gh-pages'));
+app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, '/gh-pages')));
 
