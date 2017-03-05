@@ -6,5 +6,6 @@ console.log('Be sure you used "heroku login" first and added the remote tagged a
 var answer = require('cli-interact').getYesNo('Continue');
 
 if (answer) {
-    exec('git push heroku master');
+    console.log("Pushing to heroku master");
+    exec('git push heroku master', {stdio: [0,1,2]});
 }
